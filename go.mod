@@ -1,4 +1,4 @@
-module rep
+module rep-monitor
 
 go 1.15
 
