@@ -1,3 +1,6 @@
+# *nix app binary
+rep-monitor
+
 # Binaries for programs and plugins
 *.exe
 *.exe~
