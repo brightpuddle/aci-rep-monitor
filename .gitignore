@@ -1,3 +1,9 @@
+# goreleaser build folder
+dist
+
+# Log files
+*.log
+
 # *nix app binary
 rep-monitor
 
