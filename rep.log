@@ -1,0 +1,28 @@
+{"level":"info","time":"2021-01-18T17:54:34-08:00","message":"Loging in to 10.201.36.113"}
+{"level":"info","time":"2021-01-18T17:54:34-08:00","message":"Connecting websocket"}
+{"level":"info","time":"2021-01-18T17:54:35-08:00","message":"Susbscribing to REP faults"}
+{"level":"info","time":"2021-01-18T17:54:35-08:00","message":"Listening for incoming messages"}
+{"level":"info","time":"2021-01-18T17:54:35-08:00","message":"Starting subscription refresh loop"}
+{"level":"debug","time":"2021-01-18T17:55:05-08:00","message":"Refreshing subscription"}
+{"level":"debug","time":"2021-01-18T17:55:35-08:00","message":"Refreshing subscription"}
+{"level":"debug","time":"2021-01-18T17:56:05-08:00","message":"Refreshing subscription"}
+{"level":"debug","time":"2021-01-18T17:56:31-08:00","message":"Clearing node for fault: topology/pod-1/node-102/sys/ctx-[vxlan-2260992]/bd-[vxlan-15564693]/vlan-[vlan-1207]/db-ep/rogueIpEp-[10.202.0.11]/fault-F3013"}
+{"level":"info","time":"2021-01-18T17:56:31-08:00","message":"Clearing node topology/pod-1/node-102"}
+{"level":"debug","time":"2021-01-18T17:56:32-08:00","message":"Clearing node for fault: topology/pod-1/node-101/sys/ctx-[vxlan-2260992]/bd-[vxlan-15564693]/vlan-[vlan-1207]/db-ep/rogueIpEp-[10.202.0.11]/fault-F3013"}
+{"level":"info","time":"2021-01-18T17:56:32-08:00","message":"Clearing node topology/pod-1/node-101"}
+{"level":"debug","time":"2021-01-18T17:56:32-08:00","message":"Clearing node for fault: topology/pod-1/node-101/sys/ctx-[vxlan-2260992]/bd-[vxlan-15564693]/vlan-[vlan-1207]/db-ep/rogueMacEP-00:50:56:A0:C3:ED/fault-F3014"}
+{"level":"info","time":"2021-01-18T17:56:32-08:00","message":"Clearing node topology/pod-1/node-101"}
+{"level":"debug","time":"2021-01-18T17:56:35-08:00","message":"Refreshing subscription"}
+{"level":"debug","time":"2021-01-18T17:57:06-08:00","message":"Refreshing subscription"}
+{"level":"debug","time":"2021-01-18T17:57:36-08:00","message":"Refreshing subscription"}
+{"level":"debug","time":"2021-01-18T17:58:06-08:00","message":"Refreshing subscription"}
+{"level":"debug","time":"2021-01-18T17:58:36-08:00","message":"Refreshing subscription"}
+{"level":"debug","time":"2021-01-18T17:59:06-08:00","message":"Refreshing subscription"}
+{"level":"error","error":"Get \"https://10.201.36.113/api/subscriptionRefresh.json?id=72057894702940161\": dial tcp 10.201.36.113:443: connect: operation timed out","time":"2021-01-18T18:00:53-08:00","message":"Subscription refresh error"}
+{"level":"debug","error":"Get \"https://10.201.36.113/api/subscriptionRefresh.json?id=72057894702940161\": dial tcp 10.201.36.113:443: connect: operation timed out","time":"2021-01-18T18:00:53-08:00","message":"Restarting due to error"}
+{"level":"info","time":"2021-01-18T18:00:53-08:00","message":"Pausing for 30s"}
+{"level":"error","error":"read tcp 10.19.173.103:50123->10.201.36.113:80: read: operation timed out","time":"2021-01-18T18:01:05-08:00","message":"Websocket error"}
+{"level":"info","time":"2021-01-18T18:01:23-08:00","message":"Loging in to 10.201.36.113"}
+{"level":"error","error":"Post \"https://10.201.36.113/api/aaaLogin.json\": dial tcp 10.201.36.113:443: connect: operation timed out","time":"2021-01-18T18:02:39-08:00","message":"Login error"}
+{"level":"debug","time":"2021-01-18T18:04:05-08:00","message":"Refreshing login token"}
+{"level":"error","error":"Get \"https://10.201.36.113/api/aaaRefresh\": dial tcp 10.201.36.113:443: connect: operation timed out","time":"2021-01-18T18:05:21-08:00","message":"Refresh error"}

@@ -1,0 +1,19 @@
+{
+  "actionLSubj": {
+    "attributes": {
+      "dn": "topology/pod-1/node-101/sys/action/lsubj-[topology/pod-1/node-101]",
+      "oDn": "topology/pod-1/node-101"
+    },
+    "children": [
+      {
+        "topSystemClearEpLTask": {
+          "attributes": {
+            "dn": "topology/pod-1/node-101/sys/action/lsubj-[topology/pod-1/node-101]/topSystemClearEpLTask",
+            "adminSt": "start"
+          },
+          "children": []
+        }
+      }
+    ]
+  }
+}
