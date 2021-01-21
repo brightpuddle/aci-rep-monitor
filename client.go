@@ -144,7 +144,7 @@ func (c *client) refresh() error {
 func (c *client) refreshLoop() error {
 	for {
 		elapsed := time.Since(c.lastRefresh)
-		limit := time.Duration(c.refreshTimeout-30) * time.Second
+		limit := time.Duration(c.refreshTimeout-60) * time.Second
 		if elapsed > limit {
 			if err := c.refresh(); err != nil {
 				return err
