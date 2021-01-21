@@ -132,7 +132,7 @@ func (c *client) login() error {
 // refresh refreshes the login token
 func (c *client) refresh() error {
 	log.Debug().Msg("Refreshing login token")
-	res, err := c.httpClient.Get(c.url.String() + "/api/aaaRefresh")
+	res, err := c.httpClient.Get(c.url.String() + "/api/aaaRefresh.json")
 	if err != nil {
 		return err
 	}
