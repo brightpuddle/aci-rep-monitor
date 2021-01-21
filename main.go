@@ -7,11 +7,13 @@ import (
 )
 
 const (
-	version      = "0.1.0"
 	sleepSeconds = 30 * time.Second
 )
 
-var log zerolog.Logger
+var (
+	version string
+	log     zerolog.Logger
+)
 
 func sleep(t time.Duration) {
 	log.Info().Msgf("Pausing for %s", t)
