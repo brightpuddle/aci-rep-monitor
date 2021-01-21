@@ -8,7 +8,6 @@ import (
 	"net/http"
 	"net/http/cookiejar"
 	"net/url"
-	"strconv"
 	"strings"
 	"time"
 
@@ -33,7 +32,6 @@ type client struct {
 	lastRefresh             time.Time
 	lastSubscriptionRefresh time.Time
 	clearDelay              int
-	refreshTimeout          int
 	subscriptionID          string
 	faults                  map[string]fault
 }
@@ -118,13 +116,6 @@ func (c *client) login() error {
 	if errText != "" {
 		return errors.New(errText)
 	}
-	timeoutStr := record.Get("aaaLogin.attributes.refreshTimeoutSeconds").Str
-	c.refreshTimeout, err = strconv.Atoi(timeoutStr)
-	if err != nil {
-		log.Error().Err(err).Msg("cannot convert refreshTimeoutSeconds")
-		c.refreshTimeout = 600
-	}
-
 	c.lastRefresh = time.Now()
 	return nil
 }
@@ -144,7 +135,7 @@ func (c *client) refresh() error {
 func (c *client) refreshLoop() error {
 	for {
 		elapsed := time.Since(c.lastRefresh)
-		limit := time.Duration(c.refreshTimeout-60) * time.Second
+		limit := 60 * time.Second
 		if elapsed > limit {
 			if err := c.refresh(); err != nil {
 				return err
