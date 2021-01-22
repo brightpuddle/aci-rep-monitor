@@ -317,7 +317,7 @@ func (c *client) clearNodeLoop() {
 	for {
 		for dn, fault := range c.faults {
 			elapsed := time.Since(fault.lastTransition)
-			if elapsed > delay && fault.lc == "raised" {
+			if elapsed > delay && (fault.lc == "raised" || fault.lc == "soaking") {
 				err := c.clearNode(dn)
 				if err != nil {
 					log.Error().Err(err).Msg("Clearing node")
