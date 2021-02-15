@@ -150,7 +150,7 @@ func (c *client) connectSocket() (*websocket.Conn, error) {
 	log.Info().Msg("Connecting websocket")
 
 	wsURL := url.URL{
-		Scheme: "ws",
+		Scheme: "wss",
 		Host:   c.host,
 		Path:   "/socket" + c.token(),
 	}
