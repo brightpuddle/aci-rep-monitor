@@ -72,6 +72,11 @@ func (c *client) newFault(record gjson.Result) error {
 		lc:             record.Get("lc").Str,
 		lastTransition: age,
 	}
+	log.Debug().
+		Str("dn", f.dn).
+		Str("descr", f.dn).
+		Str("code", record.Get("code").Str).
+		Msg("new fault")
 	c.faults[f.dn] = f
 	return nil
 }

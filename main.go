@@ -7,7 +7,7 @@ import (
 )
 
 const (
-	sleepSeconds = 30 * time.Second
+	sleepDuration = 30 * time.Second
 )
 
 var (
@@ -87,7 +87,7 @@ func main() {
 		// Listen for errors, rince, and repeat
 		if err := <-errChan; err != nil {
 			log.Debug().Err(err).Msg("Restarting due to error")
-			sleep(sleepSeconds)
+			sleep(sleepDuration)
 		}
 	}
 }
