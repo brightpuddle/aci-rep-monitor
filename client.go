@@ -4,7 +4,7 @@ import (
 	"crypto/tls"
 	"errors"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/http/cookiejar"
 	"net/url"
@@ -112,7 +112,7 @@ func (c *client) login() error {
 	if res.StatusCode != http.StatusOK {
 		panic(fmt.Sprintf("HTTP status code: %d", res.StatusCode))
 	}
-	body, err := ioutil.ReadAll(res.Body)
+	body, err := io.ReadAll(res.Body)
 	if err != nil {
 		return err
 	}
@@ -210,7 +210,7 @@ func (c *client) subscribe() error {
 		return err
 	}
 	defer res.Body.Close()
-	body, err := ioutil.ReadAll(res.Body)
+	body, err := io.ReadAll(res.Body)
 	if err != nil {
 		return err
 	}
@@ -243,7 +243,7 @@ func (c *client) refreshSubscription() error {
 		return err
 	}
 	defer res.Body.Close()
-	body, err := ioutil.ReadAll(res.Body)
+	body, err := io.ReadAll(res.Body)
 	if err != nil {
 		return err
 	}
@@ -271,10 +271,10 @@ func (c *client) subscriptionRefreshLoop() error {
 
 func (c *client) clearNode(dn string) error {
 	if dn == "" {
-		return errors.New("Empty DN")
+		return errors.New("empty DN")
 	}
 	if !strings.HasPrefix(dn, "topology/pod-") {
-		return fmt.Errorf("Unexpected DN format: %s", dn)
+		return fmt.Errorf("unexpected DN format: %s", dn)
 	}
 	nodeDn := getNodeDn(dn)
 	log.Debug().Msgf("Clearing node for fault: %s", dn)
@@ -306,7 +306,7 @@ func (c *client) clearNode(dn string) error {
 		return err
 	}
 	defer res.Body.Close()
-	body, err := ioutil.ReadAll(res.Body)
+	body, err := io.ReadAll(res.Body)
 	if err != nil {
 		return err
 	}
